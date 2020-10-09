@@ -8,7 +8,7 @@
         Title="oefeningen 3" Height="450" Width="800">
     <Grid>
         <TabControl >
-            <TabItem Header="oefening 1" >
+            <TabItem Header="oefening 1"  >
                 <StackPanel Orientation="Horizontal" >
                     <ComboBox x:Name="cbGeslacht" SelectedIndex="0" VerticalAlignment="Top" >
                         <ComboBoxItem Content="Man"></ComboBoxItem>
@@ -75,7 +75,32 @@
                 </DockPanel>
             </TabItem>
             <TabItem Header="Oefening 5">
-                
+                <ListBox x:Name="lbPersonen">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding InlogImg}" Width="10" Height="10"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="Oefening 6">
+                <StackPanel x:Name="spColors">
+                    <CheckBox x:Name="Rood" Content="Rood" Foreground="Red" Checked="selectColors" Unchecked="selectColors"/>
+                    <CheckBox x:Name="Oranje" Content="Oranje" Foreground="Orange" Checked="selectColors" Unchecked="selectColors"/>
+                    <CheckBox x:Name="Geel" Content="Geel" Foreground="Yellow" Checked="selectColors" Unchecked="selectColors"/>
+                    <CheckBox x:Name="Groen" Content="Groen" Foreground="Green" Checked="selectColors" Unchecked="selectColors"/>
+                    <CheckBox x:Name="Blue" Content="Blauw" Foreground="Blue" Checked="selectColors" Unchecked="selectColors"/>
+                    <ListBox x:Name="lbColors">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                    <TextBlock Text="{Binding text}" Foreground="{Binding color}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>

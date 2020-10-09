@@ -23,8 +23,14 @@ namespace wpf_oefeningen_3
         public MainWindow()
         {
             InitializeComponent();
-            
+            List<Persoon> persoons = new List<Persoon>();
+            persoons.Add(new Persoon("Jonas", "Van Mullem", true));
+            persoons.Add(new Persoon("Ken", "Field"));
+            persoons.Add(new Persoon("Koen", "De Jans", true));
+            lbPersonen.ItemsSource = persoons;
         }
+
+
         private void btnOefening1_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"{cbGeslacht.Text} {cbLeeftijd.Text}");
@@ -42,9 +48,12 @@ namespace wpf_oefeningen_3
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (txtOefening3.Foreground == Brushes.Blue) {
+            if (txtOefening3.Foreground == Brushes.Blue)
+            {
                 txtOefening3.Foreground = Brushes.Black;
-            } else {
+            }
+            else
+            {
                 txtOefening3.Foreground = Brushes.Blue;
             }
         }
@@ -66,6 +75,18 @@ namespace wpf_oefeningen_3
             }
         }
 
-
+        private void selectColors(object sender, RoutedEventArgs e)
+        {
+            List<object> colors = new List<object>();
+            foreach (CheckBox box in spColors.Children.OfType<CheckBox>())
+            {
+                object item = new { text = box.Content, color = box.Foreground };
+                if (box.IsChecked == true)
+                {
+                    colors.Add(item);
+                }
+            }
+            lbColors.ItemsSource = colors;
+        }
     }
 }

@@ -25,7 +25,6 @@ namespace wpf_oefeningen_3
             InitializeComponent();
             
         }
-        List<string> Oefening4History = new List<string>();
         private void btnOefening1_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"{cbGeslacht.Text} {cbLeeftijd.Text}");
@@ -57,7 +56,14 @@ namespace wpf_oefeningen_3
 
         private void txtOefening4_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Oefening4History.Add(txtOefening4.Text);
+            if (txtOefening4.Text == "")
+            {
+                miClear.IsEnabled = false;
+            }
+            else
+            {
+                miClear.IsEnabled = true;
+            }
         }
 
 

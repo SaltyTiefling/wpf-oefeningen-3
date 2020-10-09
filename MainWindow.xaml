@@ -66,13 +66,16 @@
 
                             <MenuItem Command="Undo" Header="&lt;" />
                             <MenuItem Command="Redo" Header="&gt;" Grid.Column="1"></MenuItem>
-                            <MenuItem x:Name="btnClear" Header="Clear text" Margin="5" Click="btnClear_Click"></MenuItem>
+                            <MenuItem x:Name="miClear" Header="Clear text" Margin="5" Click="btnClear_Click" IsEnabled="False"></MenuItem>
                             <MenuItem Command="Copy" Header="Copy" Margin="5"></MenuItem>
                             <MenuItem Command="Paste" Header="Paste" Margin="5"></MenuItem>
                         </Menu>
                         <TextBox Grid.Column="1" x:Name="txtOefening4" TextChanged="txtOefening4_TextChanged" />
                     </Grid>
                 </DockPanel>
+            </TabItem>
+            <TabItem Header="Oefening 5">
+                
             </TabItem>
         </TabControl>
     </Grid>

@@ -96,11 +96,13 @@
                     <ListBox x:Name="lbColors">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                    <TextBlock Text="{Binding text}" Foreground="{Binding color}"/>
+                                <TextBlock Text="{Binding text}" Foreground="{Binding color}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </StackPanel>
+            </TabItem>
+            <TabItem Header="oefening 7">
             </TabItem>
         </TabControl>
     </Grid>
